@@ -1,8 +1,12 @@
 const express = require('express')
 require('./db/connect')
 const book = require('./routes/bookRoute')
+const cors = require('cors')
 
 const app = express()
+app.use(cors())
+
+//for reading json data in FE
 app.use(express.urlencoded({ extended: false }));
 
 // for reading json data i.e= postman
